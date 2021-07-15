@@ -1,25 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from './components/Card';
+import CardsList from './components/CardsList';
+import { cards } from './components/Cards.const';
+import { nanoid } from 'nanoid';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CardsList key={nanoid()}>
+        <Card image={'http://placehold.it/318x180/'} item={cards[0]} />
+        <Card item={cards[1]} />
+      </CardsList>
     </div>
   );
 }
-
-export default App;
